@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Hello, Flask</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}"/>
+    </head>
+    <body>
+        {%if name %} 
+            <span class="message">Hello there, {{name}}</span> It's {{date.strftime("%A, %d %B, %Y at %X") }} 
+        {% else %} 
+            <span class="message">What's your name? Provide it after /hello/ in the URL.</span>
+        {% endif %} 
+
+        <div class="chatbox">
+            <div class="chatlogs">
+              <!-- Chat logs will be displayed here -->
+            </div>
+            <div class="chat-form">
+              <textarea class="message-input" placeholder="Type your question here..."></textarea>
+              <button class="send-btn">Send</button>
+            </div>
+          </div>
+    </body>
+</html>
